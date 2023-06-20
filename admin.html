@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <!-- Metadata containing information regarding website -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website for kids to learn how to develop websites">
+    <meta name="keywords" content="Web Development, Code for Kids, Web Dev for Kids">
+    <meta name="author" content="CS113 Group 2 - Eilidh Boyd">
+    <title>Level: Hard</title>
+
+    <!-- Link to CSS file and library to access menu icon -->
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+
+<body>
+    <!--Once other pages have been completed, add remaining links here in order-->
+    <nav class = "navbar">
+        <!-- Icon for mobile navigation -->
+        <a href="javascript:void(0);" id="mobileNavIcon">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+        <!-- Desktop navigation bar-->
+        <nav class="desktopNavigation">
+            <ul class ="navItems">
+                <li><a href="#">Home</a></li>
+                <li>
+                    <div class="dropDown">
+                        <button class="dropdownButton">Levels</button>
+                        <div class="levels-content-dropdown">
+                            <a href="beginner-intro.html">Beginner</a>
+                            <a href="intermediate-intro.html">Intermediate</a>
+                            <a href="hard-intro.html">Hard</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">Progress</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+        <h1 class="main-heading">Welcome [username]</h1>
+    </nav>
+    <!-- Mobile navigation bar -->
+    <nav id = "mobileNavigation">
+        <ul class ="navItems">
+            <li><a href="#">Home</a></li>
+            <li>
+                <div class="dropDown">
+                    <button class="dropdownButton">Levels</button>
+                    <div class="levels-content-dropdown">
+                        <a href="beginner-intro.html">Beginner</a>
+                        <a href="intermediate-intro.html">Intermediate</a>
+                        <a href="hard-intro.html">Hard</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#">Progress</a></li>
+            <li><a href="admin.html">Admin</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </nav>
+
+        <main>
+            <h1 class="level-header">Admin Dashboard</h1>
+
+            <!-- Dummy data about what creating and deleting posts might look like -->
+            <!--Expect to insert data into a table and read information from there / delete data-->
+            <!-- Tables that will be displayed in page -->
+            <section id="admin-dashboard">
+                <div id="post-manager">
+
+                    <h2>Current posts </h2>
+                    <div class="scroll-data">
+                    <table class="admin-tables">
+                        <tr class="table-header">
+                            <th>POST</th>
+                            <th>CREATED_BY</th>
+                            <th>DATE_OF_CREATION</th>
+                        </tr>
+
+                            <tr>
+                                <td>Welcome to Code for Kids!</td>
+                                <td>admin</td>
+                                <td>23/05/2023</td>
+                            </tr>
+                            <tr>
+                                <td>Advice for parents</td>
+                                <td>admin</td>
+                                <td>23/05/2023</td>
+                            </tr>
+                            <tr>
+                                <td>Expected maintenance: 25th May</td>
+                                <td>admin</td>
+                                <td>24/05/2023</td>
+                            </tr>
+
+                    </table>
+                    </div>
+
+                    <!-- Buttons for either creating or managing a post -->
+                    <button class="post-buttons" onclick="openCreateForm()">New Post</button>
+                    <button class="post-buttons" onclick="openManageForm()">Manage Posts</button>
+
+                    <!-- Form for creating a post -->
+                    <!-- The inputted information will be inserted into posts table-->
+                    <div class="popup-form" id="createPostForm">
+                        <form class="popup-form-container">
+                            <h1>Create a Post</h1>
+                            <label><b>Post Name: </b></label>
+                            <input type="text" placeholder="Enter a name for post..." name="post" required>
+                            <br>
+
+                            <label><b>Creator: </b></label>
+                            <input type="text" placeholder="Enter name of post creator" name="user" required>
+                            <br>
+
+                            <button type="submit" class="submit-btn" onclick="createPost()">Create post</button>
+                        </form>
+                    </div>
+
+                    <!-- Form for creating a post -->
+                    <!-- The inputted information will either change or delete information in the posts table-->
+                    <div class="popup-form" id="managePostForm">
+                        <form class="popup-form-container">
+                            <h1>Manage Posts</h1>
+                            <label><b>Select a post: </b></label>
+                            <select>
+                                <option>Welcome to Code for Kids!</option>
+                                <option>Advice for parents</option>
+                                <option>Expected maintenance: 25th May</option>
+                            </select>
+                            <br>
+
+                            <label><b>What action would you like to perform? </b></label>
+                            <select id="actions" onchange="checkAction()">
+                                <option>--SELECT--</option>
+                                <option value="editAction">Edit attribute</option>
+                                <option>Delete Post</option>
+                            </select>
+                            <br>
+
+                            <div id="edit-attribute" hidden>
+                            <label><b>What would you like to edit? </b></label>
+                            <select id="table-values" onchange="checkValue()">
+                                <option>--SELECT VALUE--</option>
+                                <option value="postName">Post name</option>
+                                <option value ="user">User</option>
+                            </select>
+                            </div>
+                            <br>
+
+                            <div id="edit-username" hidden>
+                                <label><b>Enter new username: </b></label>
+                                <input type="text" placeholder="Enter name of post creator" name="user" required>
+                            </div>
+                            <br>
+
+                            <div id="edit-post" hidden>
+                                <label><b>Enter new post name: </b></label>
+                                <input type="text" placeholder="Enter name of post" name="post" required>
+                            </div>
+                            <br>
+
+                            <button type="submit" class="submit-btn" onclick="performAction()">Perform action</button>
+                        </form>
+                    </div>
+
+                </div>
+
+                <!-- Table for filtering pupils and the levels they've completed or not completed -->
+                <div id="class-overview">
+                    <h2>Class overview</h2>
+                    <div class="dropdown-filters">
+                        <label>Pupil name</label>
+                        <select class="filter-list">
+                            <option>Pupil 1</option>
+                            <option>Pupil 2</option>
+                            <option>Pupil 3</option>
+                        </select>
+                        <br>
+
+                        <label>Difficulty</label>
+                        <select class="filter-list">
+                            <option>Beginner</option>
+                            <option>Intermediate</option>
+                            <option>Hard</option>
+                        </select>
+                        <br>
+
+                        <label>Level</label>
+                        <select class="filter-list">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+
+                        <label> Complete?</label>
+                        <select class="filter-list">
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+
+                    <div class="scroll-data">
+                        <table class="admin-tables">
+                            <tr class="table-header">
+                                <th>PUPIL_NAME</th>
+                                <th>LEVEL_1_COMPLETE</th>
+                                <th>LEVEL_2_COMPLETE</th>
+                                <th>LEVEL_3_COMPLETE</th>
+                                <th>LEVEL_4_COMPLETE</th>
+                                <th>LEVEL_5_COMPLETE</th>
+                            </tr>
+                            <tr>
+                                <td>Pupil 1</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td>Pupil 2</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>No</td>
+                                <td>No</td>
+                            </tr>
+                            <tr>
+                                <td>Pupil 3</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>No</td>
+                                <td>No</td>
+                                <td>No</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer with contact information and link to feedback page -->
+        <footer id="footer">
+            <p >Contact us: <br>
+                Email Address: <a href="mailto:Code.For.Kids@strath.uk">Code.For.Kids@strath.uk</a><br>
+                Phone number: 01236 879010 </p> <br>
+            <p id="feedback-link">Give us <a href="#">feedback here!</a></p>
+        </footer>
+
+        <script src="script.js"></script>
+
+    </body>
+</html>
