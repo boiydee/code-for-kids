@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Website for kids to learn how to develop websites">
+  <meta name="keywords" content="Web Development, Code for Kids, Web Dev for Kids">
+  <meta name="author" content="CS113 Group 2 - Daniel Robertson">
+  <title>HTML Level</title>
+
+  <link href="../../cs113GroupProject/css/level.css" rel="../css/level.css stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+<!--Once other pages have been completed, add remaining links here in order-->
+<nav class="navbar">
+  <a href="javascript:void(0);" id="mobileNavIcon">
+    <i class="fa-solid fa-bars"></i>
+  </a>
+  <nav class="desktopNavigation">
+    <ul class="navItems">
+      <li><a href="#">Home</a></li>
+      <li>
+        <div class="dropDown">
+          <button class="dropdownButton">Levels</button>
+          <div class="levels-content-dropdown">
+            <a href="../beginner-intro.html">Beginner</a>
+            <a href="../intermediate-intro.html">Intermediate</a>
+            <a href="../hard-intro.html">Hard</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="../progressPage.html">Progress</a></li>
+      <li><a href="../cs113GroupProject/html/admin.html">Admin</a></li>
+      <li><a href="#">Login</a></li>
+    </ul>
+  </nav>
+  <h1 class="main-heading">Welcome [username]</h1>
+</nav>
+<nav id="mobileNavigation">
+  <ul class="navItems">
+    <li><a href="index.html">Home</a></li>
+    <li>
+      <div class="dropDown">
+        <button class="dropdownButton">Levels</button>
+        <div class="levels-content-dropdown">
+          <a href="beginner-intro.html">Beginner</a>
+          <a href="intermediate-intro.html">Intermediate</a>
+          <a href="hard-intro.html">Hard</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="../progressPage.html">Progress</a></li>
+    <li><a href="../admin.html">Admin</a></li>
+    <li><a href="#">Login</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section id="level">
+    <h1 class="level-header">HTML Level 1</h1>
+
+    <p class="levelText"> CSS stands for cascading style sheet. Where HTML describes what should be in a web page, css
+      describes how
+      different aspects in html should be displayed
+      <br>
+      <br> HTML uses tags to describe where your elements should appear on the web page. A few basic tags include
+
+    <ul>
+      <li> < !DOCTYPE > Tells the page what type of file the document is</li>
+      <li> < html > Is the root of the DOM. Contains all other elements</li>
+      <li> < head > Contains some metadata about the website</li>
+      <li> < title > Is the whats displayed on the tab at the top of the page</li>
+      <li> < body > Contains the main section of the page</li>
+      <li> < hn > Where n is a number from 1 to 6. Contains headers</li>
+      <li> < p > Contains text</li>
+    </ul>
+    <div class="levelText">
+      <br> To define a tag you need to enlcose your open tag in < tag > and to close the tag you use < /tag > (without
+      the
+      spaces) <br>
+      Finally you enter your content in between the < tag > and the < /tag >
+    </div>
+
+    <br>
+
+    Basic Example:
+    <br>
+    <br>
+    < !DOCTYPE html > <br>
+    < html > <br>
+    < body > <br>
+    <br>
+    < h1 ><br><input name="htmlHeader" onchange="setHtmlPracticePageValues()" id="htmlHeader" type="text"> <br>< /h1 ><br>
+    < p ><br><input name="cssHeader" onchange="setHtmlPracticePageValues()" id="htmlParagraph" type="text"><br>< /p ><br>
+    <br>
+    < /body ><br>
+    < /html ><br>
+    <br>
+    <br>
+    <h2>Output</h2>
+    <br>
+
+    <div>
+      <h1 id="headerOutput"> </h1>
+      <p id="paraOutput"></p>
+    </div>
+  </section>
+
+</main>
+
+
+<footer id="footer">
+  <p>Contact us: <br>
+    Email Address: <a href="mailto:Code.For.Kids@strath.uk">Code.For.Kids@strath.uk</a><br>
+    Phone number: 01236 879010 </p> <br>
+  <p><a href="#">Feedback</a></p>
+</footer>
+
+<script src="../../cs113GroupProject/js/script.js"></script>
+
+</body>
+
+</html>

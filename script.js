@@ -1,18 +1,25 @@
-// Function for displaying navbar when menu icon is clicked
 
+let htmlLevelsComplete = [false, false, false, false, false];
+let cssLevelsComplete = [false, false, false, false, false];
 let mobileNav = false;
 const mobileNavigation = document.getElementById("mobileNavigation")
 
+const headerOut = document.getElementById('headerOutput');
+const paraOut = document.getElementById('paraOutput');
+
+
+
+
 window.onload = () => {
         document.getElementById("mobileNavIcon").addEventListener("click", () => {
-               if (mobileNav==true){
-                   mobileNavigation.style.display="none";
-               } else
-               {
-                   mobileNavigation.style.display="flex";
-               }
-               mobileNav = !mobileNav;
-               console.log(mobileNav)
+                if (mobileNav==true){
+                        mobileNavigation.style.display="none";
+                } else
+                {
+                        mobileNavigation.style.display="flex";
+                }
+                mobileNav = !mobileNav;
+                console.log(mobileNav)
         });
 }
 
@@ -181,3 +188,92 @@ function checkValue(){
                 document.getElementById("edit-username").hidden = false;
         }
 }
+
+function progressBar() {
+        var i = 0;
+
+        if (i == 0) {
+                i = 1;
+                var elem = document.getElementById("overviewBar");
+                var width = 1;
+                var id = setInterval(frame, 10);
+
+                function frame() {
+                        if (width >= 100) {
+                                clearInterval(id);
+                                i = 0;
+                        } else {
+                                width++;
+                                elem.style.width = width + "%";
+                        }
+                }
+        }
+}
+
+function markLevelComplete(level, levelType){
+
+        if (levelType.toLowerCase() === 'html') {
+                htmlLevelsComplete[level - 1] = true;
+        } else if (levelType.toLowerCase() === 'css'){
+                cssLevelsComplete[level - 1] = true;
+        }
+
+}
+
+function levelProgress(levelType){
+        if (levelType.toLowerCase() === 'html') {
+                return htmlProgress();
+        } else if (levelType.toLowerCase() === 'css'){
+                return cssProgress();
+        }
+
+}
+
+
+function htmlProgress(){
+
+        i = 0;
+
+        for (const complete of htmlLevelsComplete){
+                if (complete){
+                        i = i + 20;
+                }
+        }
+
+}
+
+function cssProgress(){
+
+        i = 0;
+
+        for (const complete of cssLevelsComplete){
+                if (complete){
+                        i = i + 20;
+                }
+        }
+
+}
+function setImageDimensions(){
+
+        if (document.getElementById('codingSpaceHeight').value){
+                document.getElementById('cssLessonImage').height = document.getElementById('codingSpaceHeight').value;
+        }
+
+        if (document.getElementById('codingSpaceWidth').value) {
+                document.getElementById('cssLessonImage').width = document.getElementById('codingSpaceWidth').value;
+        }
+}
+
+function setHtmlPracticePageValues(){
+
+        if (document.getElementById('htmlHeader').value){
+                headerOut.innerHTML = document.getElementById('htmlHeader').value;
+
+        }
+
+        if (document.getElementById('htmlParagraph').value) {
+                paraOut.innerHTML = document.getElementById('htmlParagraph').value;
+        }
+}
+
+
