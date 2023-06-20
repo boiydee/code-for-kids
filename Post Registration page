@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customized Page</title>
+  <style>
+
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .rectangle {
+      width: 300px;
+      height: 80px;
+      background-color: blue;
+      padding: 20px;
+      
+    }
+
+    .container {
+      height: 10vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    body {
+      background-color: red;
+      margin: 0;
+      padding: 0;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+    }
+
+    .header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: transparent;
+    }
+
+    .button-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .home-button,
+    .logout-button,
+    .level-button {
+      padding: 10px 20px;
+      background-color: transparent;
+      color: black;
+      text-decoration: none;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .home-button {
+      width: 60px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      position: relative;
+    }
+
+    .home-button::before,
+    .logout-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: blue;
+      z-index: -1;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    .thank-message {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .octagon {
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+      margin-bottom: 20px;
+      position: relative;
+      clip-path: polygon(12.5% 0%, 87.5% 0%, 100% 12.5%, 100% 87.5%, 87.5% 100%, 12.5% 100%, 0% 87.5%, 0% 12.5%);
+    }
+
+    .octagon-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: black;
+    }
+
+    .logout-button {
+      width: 60px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      position: relative;
+    }
+
+    .logout-button::before {
+      z-index: -1;
+    }
+
+    .level-button {
+      padding: 10px 20px;
+      background-color: blue;
+      color: black;
+      text-decoration: none;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="rectangle">
+    <input type="text" placeholder="Enter text here">
+  </div>
+  </div>
+
+<div class="header">
+  <div class="button-container">
+    <a href="#" class="home-button">Home</a>
+    <a href="#" class="logout-button">Logout</a>
+  </div>
+</div>
+<div class="content">
+  <div class="thank-message">Thank you!</div>
+  <div class="octagon">
+    <div class="octagon-text">
+      Post Registration<br>
+      Quiz
+    </div>
+  </div>
+  <div class="level-button">Available levels:</div>
+</div>
+</body>
+</html>
