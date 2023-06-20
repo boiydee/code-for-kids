@@ -28,12 +28,14 @@ window.onload = () => {
 function openBeginner1(){
         document.getElementById("beginButton2").disabled = false;
         document.getElementById("beginButton2-mobile").disabled = false;
+        document.location='lessons/CSSLvl1.html'
 }
 function openBeginner2(){
         document.getElementById("beginButton2").disabled = false;
         document.getElementById("beginButton2-mobile").disabled = false;
         document.getElementById("beginButton3").disabled = false;
         document.getElementById("beginButton3-mobile").disabled = false;
+        window.location.href = 'lessons/HTMLLvl1.html'
 }
 function openBeginner3(){
         document.getElementById("beginButton2").disabled = false;
