@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="stylesheet.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Login</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #D61355;
+      font-family: "handwriting", cursive;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #4388CC;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #FFF;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+
+    nav.right {
+      margin-left: auto;
+    }
+
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+    }
+
+    .menu-icon span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #FFF;
+      margin-bottom: 5px;
+    }
+
+
+    footer {
+      background-color: #4388CC;
+      color: #FFF;
+      text-align: center;
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer div {
+      flex: 1;
+      text-align: left;
+    }
+
+    footer div:nth-child(2) {
+      text-align: center;
+    }
+
+    footer div:nth-child(3) {
+      text-align: right;
+    }
+
+    .content {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .content h1 {
+      color: #4388CC;
+      font-size: 32px;
+    }
+
+    form {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    form input {
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+
+    form button {
+      padding: 10px 20px;
+      background-color: #4388CC;
+      color: #FFF;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      var menu = document.querySelector('.menu');
+      menu.classList.toggle('active');
+    }
+  </script>
+</head>
+<body>
+  <nav class = "navbar">
+    <!-- Icon for mobile navigation -->
+    <a href="javascript:void(0);" id="mobileNavIcon">
+      <i class="fa-solid fa-bars"></i>
+    </a>
+    <!-- Desktop navigation bar-->
+    <nav class="desktopNavigation">
+      <ul class ="navItems">
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <div class="dropDown">
+            <button class="dropdownButton">Levels</button>
+            <div class="levels-content-dropdown">
+              <a href="beginner-intro.html">Beginner</a>
+              <a href="intermediate-intro.html">Intermediate</a>
+              <a href="hard-intro.html">Hard</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="progressPage.html">Progress</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+    <h1 class="main-heading">Welcome [username]</h1>
+  </nav>
+  <!-- Mobile navigation bar -->
+  <nav id = "mobileNavigation">
+    <ul class ="navItems">
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <div class="dropDown">
+          <button class="dropdownButton">Levels</button>
+          <div class="levels-content-dropdown">
+            <a href="beginner-intro.html">Beginner</a>
+            <a href="intermediate-intro.html">Intermediate</a>
+            <a href="hard-intro.html">Hard</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="progressPage.html">Progress</a></li>
+      <li><a href="admin.html">Admin</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+
+  <h1 style="text-align: center; color: #4388CC;">Login Below</h1>
+
+  <form>
+    <input type="email" placeholder="Email" required>
+    <br>
+    <input type="password" placeholder="Password" required>
+    <br>
+    <button type="submit">Log In</button>
+  </form>
+  <p style="text-align: center;">Need an account? <a href="register.html">Register here!</a></p>
+
+  <footer id="footer">
+    <p >Contact us: <br>
+      Email Address: <a href="mailto:Code.For.Kids@strath.uk">Code.For.Kids@strath.uk</a><br>
+      Phone number: 01236 879010 </p>
+    <p id="feedback-link">Give us <a href="#">feedback here!</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
