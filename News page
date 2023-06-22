@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>News Page</title>
+    <style>
+
+        .sphere {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .center-sphere {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: #4388CC;
+            left: 50%;
+            width: 250px;
+            height: 250px;
+        }
+
+        .left-sphere {
+            background-color: #4388CC;
+            left: 30%;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+
+        .right-sphere {
+            background-color: #4388CC;
+            left: 70%;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+        }
+
+        body {
+            background-color: #D61355;
+            margin: 0;
+            padding: 0;
+        }
+
+        .button {
+            width: 100px;
+            height: 100px;
+            background-color: #4388CC;
+            display: inline-block;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 100px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: black;
+            text-decoration: none;
+        }
+
+        .logout-button {
+            width: 100px;
+            height: 100px;
+            background-color: #4388CC;
+            color: black;
+            text-decoration: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            text-align: center;
+            line-height: 100px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            padding: 0;
+        }
+
+        .news-text {
+            position: absolute;
+            top: 120px;
+            left: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            color: black;
+            text-decoration: underline;
+
+        }
+        .rectangle {
+            background-color: #4388CC;
+            color: black;
+            width: 150px;
+            height: 170px;
+            text-align: center;
+            line-height: 60px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 70px; /* Adjusted */
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .square-button {
+            background-color: #4388CC;
+            color: black;
+            width: 200px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        .bottom-right {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .report-box {
+            background-color: #f0f0f0;
+            width: 300px;
+            padding: 20px;
+            position: absolute;
+            bottom: 90px;
+            right: 60px;
+            display: none;
+        }
+
+        .report-box p {
+            margin: 0;
+            margin-bottom: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+<a href="home.html" class="button">Home</a>
+<a href="levels.html" class="button">Levels</a>
+<a href="progress.html" class="button">Progress</a></body>
+<a href="logout.html" class="logout-button">Logout</a>
+
+<a href="headline.html" class="sphere left-sphere"><h1>Headline 2</h1></a>
+<a href="headline.html" class="sphere center-sphere"><h1>Headline 1</h1></a>
+<a href="headline.html" class="sphere right-sphere"><h1>Headline 3</h1></a>
+
+<p style="color: #4388CC; font-family: Handwriting, sans-serif; font-size: 18px; text-align: center;" class="news-text">Code for Kids: News!</p>
+<p style="color: #4388CC; font-family: Handwriting, sans-serif; font-size: 25px; text-align: center;">What's New!</p>
+
+<div class="dropdown">
+    <button class="rectangle" onclick="toggleDropdown()">Pick up where you left off</button>
+    <div class="dropdown-content">
+        <a href="#">Basics of HTML</a>
+        <a href="#">Basics of CSS</a>
+        <a href="#">Basics of JavaScript</a>
+    </div>
+</div>
+
+<button class="square-button bottom-right" onclick="toggleReportBox()">Report an article or issue</button>
+<div id="report-box" class="report-box">
+    <p>Report helpline: 123456789</p>
+    <p>Site helpline: 987654321</p>
+</div>
+
+<script>
+    function toggleReportBox() {
+        var reportBox = document.getElementById('report-box');
+        reportBox.style.display = reportBox.style.display === 'none' ? 'block' : 'none';
+    }
+
+</script>
+</html>
