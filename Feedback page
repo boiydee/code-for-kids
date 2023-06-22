@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback page</title>
+    <style>
+        body {
+            background-color: #D61355;
+            margin: 0;
+            padding: 0;
+        }
+
+        .button {
+            width: 100px;
+            height: 100px;
+            background-color: #4388CC;
+            display: inline-block;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 100px;
+            font-family: Handwriting, sans-serif;
+            font-size: 16px;
+            color: black;
+            text-decoration: none;
+        }
+
+        .logout-button {
+            width: 100px;
+            height: 100px;
+            background-color: #4388CC;
+            color: black;
+            text-decoration: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            text-align: center;
+            line-height: 100px;
+            font-family: Handwriting, sans-serif;
+            font-size: 16px;
+            padding: 0;
+        }
+
+        .news-text {
+            position: absolute;
+            top: 120px;
+            left: 10px;
+            font-family: Handwriting, sans-serif;
+            font-size: 20px;
+            color: black;
+            text-decoration: underline;
+
+        }
+
+        .rectangle {
+            width: 300px;
+            height: 200px;
+            background-color: #4388CC;
+            color: black;
+            display: inline-block;
+            margin-bottom: 20px;
+            line-height: 200px;
+            font-size: 18px;
+        }
+
+        .circle {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background-color: #4388CC;
+            color: black;
+            text-align: center;
+            line-height: 30px;
+            font-size: 16px;
+            margin: 10px;
+            border-radius: 50%;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .container-r {
+            text-align: center;
+            margin-right: -900px;
+        }
+
+        .rectangle-r {
+            width: 300px;
+            height: 50px;
+            background-color: #4388CC;
+            color: black;
+            display: inline-block;
+            line-height: 50px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+
+
+        .container-l {
+            text-align: center;
+            margin-top: -350px;
+        }
+
+        .rectangle-l {
+            width: 250px;
+            height: 360px;
+            background-color: #4388CC;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 20px;
+        }
+
+        .square-l {
+            width: 150px;
+            height: 50px;
+            background-color: #73B7F3;
+            color: black;
+            line-height: 50px;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .text-input-l {
+            width: 150px;
+            height: 20px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .circle-l {
+            width: 60px;
+            height: 60px;
+            background-color: #73B7F3;
+            color: black;
+            text-align: center;
+            line-height: 60px;
+            font-size: 16px;
+            border-radius: 50%;
+            border: none;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<a href="home.html" class="button">Home</a>
+<a href="levels.html" class="button">Levels</a>
+<a href="progress.html" class="button">Progress</a></body>
+<a href="logout.html" class="logout-button">Logout</a>
+
+<p style="color: #4388CC; font-family: Handwriting, sans-serif; font-size: 18px; text-align: center;" class="news-text">Code for Kids: Feedback</p>
+<p style="color: #4388CC; font-family: Handwriting, sans-serif; font-size: 25px; text-align: center;">Feedback</p>
+
+<div class="container">
+<div class="rectangle">
+    What is your opinion of our website?
+
+    <button class="circle">1</button>
+    <button class="circle">2</button>
+    <button class="circle">3</button>
+    <button class="circle">4</button>
+    <button class="circle">5</button>
+</div>
+</div>
+
+<div class="container-r">
+    <button class="rectangle-r" onclick="displayMessage()">Admin/Staff contact information</button>
+</div>
+
+
+
+<div class="container-l">
+    <div class="rectangle-l">
+        <div class="square-l">Submission form</div>
+        <input type="text" class="text-input-l" placeholder="Enter name:">
+        <input type="text" class="text-input-l" placeholder="Enter Feedback:">
+        <input type="text" class="text-input-l" placeholder="Additional info:">
+        <a href="#" class="circle-l">Submit</a>
+    </div>
+</div>
+
+
+
+</body>
+
+</style>
+
+<script>
+    function displayMessage() {
+        alert("Please visit www.codeforkids/info.com to view any FAQ's");
+        alert("For any direct channels of contact go to the NEWS PAGE of our website");
+    }
+</script>
+
+</html>
