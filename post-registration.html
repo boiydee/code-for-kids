@@ -6,143 +6,140 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
 
-    body, html {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
+      .container {
+          width: 700px;
+          height: 90px;
+          background-color: #4388CC;
+          display: flex;
+          flex-direction: column;
+          justify-content: normal;
+          align-items: normal;
+          text-align: center;
+          color: black;
+          transform: translateY(50%);
+      }
+      body {
+          background-color: #D61355;
+          margin: 0;
+          padding: 0;
+          color: black;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          height: 100vh;
+      }
 
-    .rectangle {
-      width: 300px;
-      height: 80px;
-      background-color: blue;
-      padding: 20px;
-      
-    }
+      .header {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 20px;
+          background-color: transparent;
+      }
 
-    .container {
-      height: 10vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+      .button-container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          padding-left: 20px;
+          padding-right: 20px;
+      }
 
-    body {
-      margin: 0;
-      padding: 0;
-      color: black;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      height: 100vh;
-    }
+      .home-button,
+      .logout-button,
+      .level-button {
+          padding: 10px 20px;
+          background-color: transparent;
+          color: black;
+          text-decoration: none;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+      }
 
-    .header {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 20px;
-      background-color: transparent;
-    }
+      .home-button {
+          width: 60px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 14px;
+          position: relative;
+      }
 
-    .button-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
+      .home-button::before,
+      .logout-button::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #4388CC;
+          z-index: -1;
+      }
 
-    .home-button,
-    .logout-button,
-    .level-button {
-      padding: 10px 20px;
-      background-color: transparent;
-      color: black;
-      text-decoration: none;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-    }
+      .content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 30px;
+      }
 
-    .home-button {
-      width: 60px;
-      height: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 14px;
-      position: relative;
-    }
+      .octagon {
+          width: 200px;
+          height: 200px;
+          background-color: #4388CC;
+          margin-bottom: 20px;
+          position: relative;
+          clip-path: polygon(12.5% 0%, 87.5% 0%, 100% 12.5%, 100% 87.5%, 87.5% 100%, 12.5% 100%, 0% 87.5%, 0% 12.5%);
+      }
 
-    .home-button::before,
-    .logout-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: blue;
-      z-index: -1;
-    }
+      .level-button2 {
+          position: absolute;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          color: black;
+      }
 
-    .content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 30px;
-    }
+      .logout-button {
+          width: 60px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 14px;
+          position: relative;
+      }
 
-    .thank-message {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
+      .logout-button::before {
+          z-index: -1;
+      }
 
-    .octagon {
-      width: 200px;
-      height: 200px;
-      background-color: blue;
-      margin-bottom: 20px;
-      position: relative;
-      clip-path: polygon(12.5% 0%, 87.5% 0%, 100% 12.5%, 100% 87.5%, 87.5% 100%, 12.5% 100%, 0% 87.5%, 0% 12.5%);
-    }
+      .level-button {
+          padding: 10px 20px;
+          background-color: #4388CC;
+          color: black;
+          text-decoration: none;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+      }
 
-    .octagon-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: black;
-    }
-
-    .logout-button {
-      width: 60px;
-      height: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 14px;
-      position: relative;
-    }
-
-    .logout-button::before {
-      z-index: -1;
-    }
-
-    .level-button {
-      padding: 10px 20px;
-      background-color: blue;
-      color: black;
-      text-decoration: none;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-    }
+      .level-dropdown {
+          background-color: #f0f0f0;
+          width: 300px;
+          padding: 20px;
+          position: absolute;
+          bottom: 90px;
+          right: 60px;
+          display: none;
+      }
   </style>
 </head>
 <body>
@@ -192,15 +189,29 @@
         </ul>
     </nav>
     <div class="content">
-      <div class="thank-message">Thank you!</div>
-      <div class="octagon">
-        <div class="octagon-text">
-          Post Registration<br>
-          Quiz
+        <div class="octagon">
+            <a href="quiz-take.html" class="level-button2">
+                Post Registration<br>
+                Quiz
+                <a href="#" class="button"></a>
+            </a>
         </div>
-      </div>
-      <div class="level-button">Available levels:</div>
+        <button class="level-button" onclick="toggleLevelsBox()">Available levels:</button>
+        <div id="level-button" class="level-button">
+            <a href="#">Level 1</a>
+            <a href="#">Level 2</a>
+            <a href="#">Level 3</a>
+            <a href="#">Level 4</a>
+            <a href="#">Level 5</a>
+        </div>
     </div>
+    <script>
+        function toggleLevelsBox() {
+            var levelBox = document.getElementById('level-button');
+            levelBox.style.display = levelBox.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+
 
     <footer id="footer">
       <p >Contact us: <br>
