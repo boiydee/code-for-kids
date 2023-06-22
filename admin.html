@@ -9,7 +9,7 @@
     <meta name="description" content="Website for kids to learn how to develop websites">
     <meta name="keywords" content="Web Development, Code for Kids, Web Dev for Kids">
     <meta name="author" content="CS113 Group 2 - Eilidh Boyd">
-    <title>Level: Hard</title>
+    <title>Admin Dashboard</title>
 
     <!-- Link to CSS file and library to access menu icon -->
     <link href="stylesheet.css" rel="stylesheet" type="text/css">
@@ -110,16 +110,16 @@
                     <!-- The inputted information will be inserted into posts table-->
                     <div class="popup-form" id="createPostForm">
                         <form class="popup-form-container">
-                            <h1>Create a Post</h1>
+                            <h1 style="margin: 0">Create a Post</h1>
                             <label><b>Post Name: </b></label>
-                            <input type="text" placeholder="Enter a name for post..." name="post" required>
+                            <input type="text" class="input-box" placeholder="Enter a name for post..." name="post" required>
                             <br>
 
                             <label><b>Creator: </b></label>
-                            <input type="text" placeholder="Enter name of post creator" name="user" required>
+                            <input type="text" class="input-box" placeholder="Enter name of post creator" name="user" required>
                             <br>
 
-                            <button type="submit" class="submit-btn" onclick="createPost()">Create post</button>
+                            <input type="submit" class="submit-btn" value="Create Post" onclick="createPost()">
                         </form>
                     </div>
 
@@ -127,7 +127,7 @@
                     <!-- The inputted information will either change or delete information in the posts table-->
                     <div class="popup-form" id="managePostForm">
                         <form class="popup-form-container">
-                            <h1>Manage Posts</h1>
+                            <h1 style="margin: 0">Manage Posts</h1>
                             <label><b>Select a post: </b></label>
                             <select>
                                 <option>Welcome to Code for Kids!</option>
@@ -137,7 +137,7 @@
                             <br>
 
                             <label><b>What action would you like to perform? </b></label>
-                            <select id="actions" onchange="checkAction()">
+                            <select id="actions" onchange="checkAction()" required>
                                 <option>--SELECT--</option>
                                 <option value="editAction">Edit attribute</option>
                                 <option>Delete Post</option>
@@ -146,7 +146,7 @@
 
                             <div id="edit-attribute" hidden>
                             <label><b>What would you like to edit? </b></label>
-                            <select id="table-values" onchange="checkValue()">
+                            <select id="table-values" onchange="checkValue()" required>
                                 <option>--SELECT VALUE--</option>
                                 <option value="postName">Post name</option>
                                 <option value ="user">User</option>
@@ -156,13 +156,13 @@
 
                             <div id="edit-username" hidden>
                                 <label><b>Enter new username: </b></label>
-                                <input type="text" placeholder="Enter name of post creator" name="user" required>
+                                <input type="text" class="required" onkeyup="allowUserToSubmit()" placeholder="Enter name of post creator" name="user">
                             </div>
                             <br>
 
                             <div id="edit-post" hidden>
                                 <label><b>Enter new post name: </b></label>
-                                <input type="text" placeholder="Enter name of post" name="post" required>
+                                <input type="text" placeholder="Enter name of post" name="post" class="required" onkeyup="allowUserToSubmit()">
                             </div>
                             <br>
 
@@ -252,8 +252,9 @@
         <footer id="footer">
             <p >Contact us: <br>
                 Email Address: <a href="mailto:Code.For.Kids@strath.uk">Code.For.Kids@strath.uk</a><br>
-                Phone number: 01236 879010 </p> <br>
-            <p id="feedback-link">Give us <a href="#">feedback here!</a></p>
+                Phone number: 01236 879010 </p>
+            <p><a style="color: white" href="news.html">News</a></p>
+            <p id="feedback-link">Give us <a href="feedback.html">feedback here!</a></p>
         </footer>
 
         <script src="script.js"></script>

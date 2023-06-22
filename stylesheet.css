@@ -100,15 +100,15 @@ body {
 }
 
 #footer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    position: relative;
     background-color: #4388CC;
     color: #FFF;
     font-size: 20px;
     text-align: center;
     margin-top: auto;
-    display: flex;
-    position: relative;
-    justify-content: space-evenly;
-    flex-flow: row wrap;
     width: 100%;
     align-items: center;
 }
@@ -263,11 +263,6 @@ body {
         display: none;
     }
 
-    .post-buttons {
-
-        margin-left: 110px;
-    }
-
 
 }
 
@@ -330,14 +325,19 @@ h2 {
 
 .popup-form{
     display: none;
-    position: fixed;
-    border: 2px solid #4388CC;
+    position: relative;
     margin-top: 5px;
 }
 .popup-form-container {
-    max-width: 100%;
+    margin: 0;
+    border: 2px solid #4388CC;
+    max-width: 250px;
     padding: 10px;
     background-color: white;
+}
+
+.input-box {
+    width: 150px;
 }
 
 #overviewBar {
@@ -359,10 +359,7 @@ h2 {
 }
 
 p{
-
     align-content: center;
-    padding-right: 10px;
     table-layout: auto;
-    width: 80vh;
     flex: 1;
 }

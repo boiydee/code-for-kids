@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Customized Page</title>
+  <title>Post-Registration Quiz</title>
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
 
     body, html {
@@ -26,7 +28,6 @@
     }
 
     body {
-      background-color: red;
       margin: 0;
       padding: 0;
       color: black;
@@ -145,27 +146,70 @@
   </style>
 </head>
 <body>
-<div class="container">
-  <div class="rectangle">
-    <input type="text" placeholder="Enter text here">
-  </div>
-  </div>
-
-<div class="header">
-  <div class="button-container">
-    <a href="#" class="home-button">Home</a>
-    <a href="#" class="logout-button">Logout</a>
-  </div>
-</div>
-<div class="content">
-  <div class="thank-message">Thank you!</div>
-  <div class="octagon">
-    <div class="octagon-text">
-      Post Registration<br>
-      Quiz
+    <nav class = "navbar">
+        <!-- Icon for mobile navigation -->
+        <a href="javascript:void(0);" id="mobileNavIcon">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+        <!-- Desktop navigation bar-->
+        <nav class="desktopNavigation">
+            <ul class ="navItems">
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <div class="dropDown">
+                        <button class="dropdownButton">Levels</button>
+                        <div class="levels-content-dropdown">
+                            <a href="beginner-intro.html">Beginner</a>
+                            <a href="intermediate-intro.html">Intermediate</a>
+                            <a href="hard-intro.html">Hard</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="progressPage.html">Progress</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <h1 class="main-heading">Welcome [username]</h1>
+    </nav>
+    <!-- Mobile navigation bar -->
+    <nav id = "mobileNavigation">
+        <ul class ="navItems">
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <div class="dropDown">
+                    <button class="dropdownButton">Levels</button>
+                    <div class="levels-content-dropdown">
+                        <a href="beginner-intro.html">Beginner</a>
+                        <a href="intermediate-intro.html">Intermediate</a>
+                        <a href="hard-intro.html">Hard</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="progressPage.html">Progress</a></li>
+            <li><a href="admin.html">Admin</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+      <div class="thank-message">Thank you!</div>
+      <div class="octagon">
+        <div class="octagon-text">
+          Post Registration<br>
+          Quiz
+        </div>
+      </div>
+      <div class="level-button">Available levels:</div>
     </div>
-  </div>
-  <div class="level-button">Available levels:</div>
-</div>
+
+    <footer id="footer">
+      <p >Contact us: <br>
+        Email Address: <a href="mailto:Code.For.Kids@strath.uk">Code.For.Kids@strath.uk</a><br>
+        Phone number: 01236 879010 </p>
+      <p><a style="color: white" href="news.html">News</a></p>
+      <p id="feedback-link">Give us <a href="feedback.html">feedback here!</a></p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

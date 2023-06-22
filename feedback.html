@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
+    <!-- Link to CSS file and library to access menu icon -->
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Feedback page</title>
     <style>
         body {
@@ -148,10 +152,51 @@
 </head>
 <body>
 
-<a href="home.html" class="button">Home</a>
-<a href="levels.html" class="button">Levels</a>
-<a href="progress.html" class="button">Progress</a></body>
-<a href="logout.html" class="logout-button">Logout</a>
+<nav class = "navbar">
+    <!-- Icon for mobile navigation -->
+    <a href="javascript:void(0);" id="mobileNavIcon">
+        <i class="fa-solid fa-bars"></i>
+    </a>
+    <!-- Desktop navigation bar-->
+    <nav class="desktopNavigation">
+        <ul class ="navItems">
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <div class="dropDown">
+                    <button class="dropdownButton">Levels</button>
+                    <div class="levels-content-dropdown">
+                        <a href="beginner-intro.html">Beginner</a>
+                        <a href="intermediate-intro.html">Intermediate</a>
+                        <a href="hard-intro.html">Hard</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="progressPage.html">Progress</a></li>
+            <li><a href="admin.html">Admin</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <h1 class="main-heading">Welcome [username]</h1>
+</nav>
+<!-- Mobile navigation bar -->
+<nav id = "mobileNavigation">
+    <ul class ="navItems">
+        <li><a href="index.html">Home</a></li>
+        <li>
+            <div class="dropDown">
+                <button class="dropdownButton">Levels</button>
+                <div class="levels-content-dropdown">
+                    <a href="beginner-intro.html">Beginner</a>
+                    <a href="intermediate-intro.html">Intermediate</a>
+                    <a href="hard-intro.html">Hard</a>
+                </div>
+            </div>
+        </li>
+        <li><a href="progressPage.html">Progress</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+</nav>
 
 <p style="color: #4388CC; font-family: Handwriting, sans-serif; font-size: 18px; text-align: center;" class="news-text">Code for Kids: Feedback</p>
 <p style="color: #4388CC; font-family: Handwriting, sans-serif; font-size: 25px; text-align: center;">Feedback</p>
@@ -190,11 +235,19 @@
 
 </style>
 
-<script>
-    function displayMessage() {
-        alert("Please visit www.codeforkids/info.com to view any FAQ's");
-        alert("For any direct channels of contact go to the NEWS PAGE of our website");
-    }
-</script>
+    <script>
+        function displayMessage() {
+            alert("Please visit www.codeforkids/info.com to view any FAQ's");
+            alert("For any direct channels of contact go to the NEWS PAGE of our website");
+        }
+    </script>
+
+    <footer id="footer">
+        <p >Contact us: <br>
+            Email Address: <a href="mailto:Code.For.Kids@strath.uk">Code.For.Kids@strath.uk</a><br>
+            Phone number: 01236 879010 </p>
+        <p><a style="color: white" href="news.html">News</a></p>
+        <p id="feedback-link">Give us <a href="feedback.html">feedback here!</a></p>
+    </footer>
 
 </html>

@@ -28,14 +28,15 @@ window.onload = () => {
 function openBeginner1(){
         document.getElementById("beginButton2").disabled = false;
         document.getElementById("beginButton2-mobile").disabled = false;
-        document.location='lessons/CSSLvl1.html'
+        window.location.href="lessons/HTMLLvl1.html"
+
 }
 function openBeginner2(){
         document.getElementById("beginButton2").disabled = false;
         document.getElementById("beginButton2-mobile").disabled = false;
         document.getElementById("beginButton3").disabled = false;
         document.getElementById("beginButton3-mobile").disabled = false;
-        window.location.href = 'lessons/HTMLLvl1.html'
+        window.location.href = "lessons/CSSLvl1.html"
 }
 function openBeginner3(){
         document.getElementById("beginButton2").disabled = false;
@@ -150,11 +151,13 @@ function openHardBoss(){
 // Functions for opening forms when button is clicked in admin.html
 function openCreateForm() {
         document.getElementById("createPostForm").style.display = "block";
+        document.getElementById("managePostForm").style.display = "none";
 
 }
 
 function openManageForm() {
         document.getElementById("managePostForm").style.display = "block";
+        document.getElementById("createPostForm").style.display = "none";
 }
 
 // Functions for displaying alerts to user after clicking submit button admin.html forms
@@ -182,8 +185,9 @@ function checkAction(){
 function checkValue(){
         var value = document.getElementById("table-values").value;
         if(value == "postName") {
-                document.getElementById("edit-post").hidden = false;
                 document.getElementById("edit-username").hidden = true;
+                document.getElementById("edit-post").hidden = false;
+
         }
         else{
                 document.getElementById("edit-post").hidden = true;
@@ -276,6 +280,10 @@ function setHtmlPracticePageValues(){
         if (document.getElementById('htmlParagraph').value) {
                 paraOut.innerHTML = document.getElementById('htmlParagraph').value;
         }
+}
+
+function startRegQuiz(){
+        window.location.href = "post-registration.html"
 }
 
 

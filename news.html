@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <title>News Page</title>
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
 
         .sphere {
@@ -99,6 +101,7 @@
             bottom: 20px;
             left: 20px;
             cursor: pointer;
+            margin-bottom: 125px;
         }
 
         .dropdown-content {
@@ -145,6 +148,7 @@
             position: absolute;
             bottom: 20px;
             right: 20px;
+            margin-bottom: 125px;
         }
 
         .report-box {
@@ -155,6 +159,7 @@
             bottom: 90px;
             right: 60px;
             display: none;
+            margin-bottom: 125px;
         }
 
         .report-box p {
@@ -168,10 +173,48 @@
     </style>
 </head>
 <body>
-<a href="home.html" class="button">Home</a>
-<a href="levels.html" class="button">Levels</a>
-<a href="progress.html" class="button">Progress</a></body>
-<a href="logout.html" class="logout-button">Logout</a>
+<nav class="navbar">
+<a href="javascript:void(0);" id="mobileNavIcon">
+    <i class="fa-solid fa-bars"></i>
+</a>
+<nav class="desktopNavigation">
+    <ul class="navItems">
+        <li><a href="index.html">Home</a></li>
+        <li>
+            <div class="dropDown">
+                <button class="dropdownButton">Levels</button>
+                <div class="levels-content-dropdown">
+                    <a href="beginner-intro.html">Beginner</a>
+                    <a href="intermediate-intro.html">Intermediate</a>
+                    <a href="hard-intro.html">Hard</a>
+                </div>
+            </div>
+        </li>
+        <li><a href="progressPage.html">Progress</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+</nav>
+<h1 class="main-heading">Welcome [username]</h1>
+</nav>
+<nav id="mobileNavigation">
+    <ul class="navItems">
+        <li><a href="index.html">Home</a></li>
+        <li>
+            <div class="dropDown">
+                <button class="dropdownButton">Levels</button>
+                <div class="levels-content-dropdown">
+                    <a href="beginner-intro.html">Beginner</a>
+                    <a href="intermediate-intro.html">Intermediate</a>
+                    <a href="hard-intro.html">Hard</a>
+                </div>
+            </div>
+        </li>
+        <li><a href="progressPage.html">Progress</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+</nav>
 
 <a href="headline.html" class="sphere left-sphere"><h1>Headline 2</h1></a>
 <a href="headline.html" class="sphere center-sphere"><h1>Headline 1</h1></a>
@@ -202,4 +245,15 @@
     }
 
 </script>
+
+    <footer id="footer">
+        <p >Contact us: <br>
+            Email Address: <a href="mailto:Code.For.Kids@strath.uk">Code.For.Kids@strath.uk</a><br>
+            Phone number: 01236 879010 </p>
+        <p><a style="color: white" href="news.html">News</a></p>
+        <p id="feedback-link">Give us <a href="feedback.html">feedback here!</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
