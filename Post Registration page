@@ -1,32 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Customized Page</title>
+  <title>Post Registration Page</title>
   <style>
 
-    body, html {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
-    .rectangle {
-      width: 300px;
-      height: 80px;
-      background-color: blue;
-      padding: 20px;
-      
-    }
-
     .container {
-      height: 10vh;
+      width: 700px;
+      height: 90px;
+      background-color: #4388CC;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
+      justify-content: normal;
+      align-items: normal;
+      text-align: center;
+      color: black;
+      transform: translateY(50%);
     }
-
     body {
-      background-color: red;
+      background-color: #D61355;
       margin: 0;
       padding: 0;
       color: black;
@@ -84,7 +75,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: blue;
+      background-color: #4388CC;
       z-index: -1;
     }
 
@@ -96,23 +87,18 @@
       margin-top: 30px;
     }
 
-    .thank-message {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
     .octagon {
       width: 200px;
       height: 200px;
-      background-color: blue;
+      background-color: #4388CC;
       margin-bottom: 20px;
       position: relative;
       clip-path: polygon(12.5% 0%, 87.5% 0%, 100% 12.5%, 100% 87.5%, 87.5% 100%, 12.5% 100%, 0% 87.5%, 0% 12.5%);
     }
 
-    .octagon-text {
+    .level-button2 {
       position: absolute;
-      top: 50%;
+      top: 40%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
@@ -135,37 +121,59 @@
 
     .level-button {
       padding: 10px 20px;
-      background-color: blue;
+      background-color: #4388CC;
       color: black;
       text-decoration: none;
       font-size: 16px;
       border: none;
       cursor: pointer;
     }
+
+    .level-dropdown {
+      background-color: #f0f0f0;
+      width: 300px;
+      padding: 20px;
+      position: absolute;
+      bottom: 90px;
+      right: 60px;
+      display: none;
+    }
+
   </style>
 </head>
 <body>
 <div class="container">
-  <div class="rectangle">
-    <input type="text" placeholder="Enter text here">
-  </div>
-  </div>
-
+  <p>Thank you for registering, now please take the recommended "Post Registration Quiz" to see where your skill levels are. Or if you wish you can manually pick a level to start with.</p>
+</div>
 <div class="header">
   <div class="button-container">
-    <a href="#" class="home-button">Home</a>
-    <a href="#" class="logout-button">Logout</a>
+    <a href="home.html" class="home-button">Home</a>
+    <a href="logout.html" class="logout-button">Logout</a>
   </div>
 </div>
 <div class="content">
-  <div class="thank-message">Thank you!</div>
   <div class="octagon">
-    <div class="octagon-text">
+    <a href="quiz-take.html" class="level-button2">
       Post Registration<br>
       Quiz
-    </div>
+      <a href="#" class="button"></a>
+    </a>
   </div>
-  <div class="level-button">Available levels:</div>
+  <button class="level-button" onclick="toggleLevelsBox()">Available levels:</button>
+  <div id="level-button" class="level-button">
+    <a href="#">Level 1</a>
+    <a href="#">Level 2</a>
+    <a href="#">Level 3</a>
+    <a href="#">Level 4</a>
+    <a href="#">Level 5</a>
+  </div>
 </div>
 </body>
+<script>
+  function toggleLevelsBox() {
+    var levelBox = document.getElementById('level-button');
+    levelBox.style.display = levelBox.style.display === 'none' ? 'block' : 'none';
+  }
+</script>
 </html>
+
