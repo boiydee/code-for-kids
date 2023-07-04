@@ -32,13 +32,13 @@
                         <button class="dropdownButton">Levels</button>
                         <div class="levels-content-dropdown">
                             <a href="beginner-intro.html">Beginner</a>
-                            <a href="intermediate-intro.html">Intermediate</a>
-                            <a href="hard-intro.html">Hard</a>
+                            <a href="intermediate-intro.php">Intermediate</a>
+                            <a href="hard-intro.php">Hard</a>
                         </div>
                     </div>
                 </li>
                 <li><a href="progressPage.html">Progress</a></li>
-                <li><a href="admin.html">Admin</a></li>
+                <li><a href="admin.php">Admin</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
@@ -53,13 +53,13 @@
                     <button class="dropdownButton">Levels</button>
                     <div class="levels-content-dropdown">
                         <a href="beginner-intro.html">Beginner</a>
-                        <a href="intermediate-intro.html">Intermediate</a>
-                        <a href="hard-intro.html">Hard</a>
+                        <a href="intermediate-intro.php">Intermediate</a>
+                        <a href="hard-intro.php">Hard</a>
                     </div>
                 </div>
             </li>
             <li><a href="progressPage.html">Progress</a></li>
-            <li><a href="admin.html">Admin</a></li>
+            <li><a href="admin.php">Admin</a></li>
             <li><a href="login.html">Login</a></li>
         </ul>
     </nav>
@@ -72,15 +72,17 @@
 
         <div class="desktop-level-selectors">
         <div class="level-selectors">
-            <button onclick="openBeginner1()" class="level-button" id="beginButton1">Level 1</button>
-            <hr class="horizontal"/>
-            <button onclick="openBeginner2()" class="level-button" id="beginButton2" disabled>Level 2</button>
-            <hr class="horizontal"/>
-            <button onclick="openBeginner3()" class="level-button" id="beginButton3" disabled>Level 3</button>
-            <hr class="horizontal"/>
-            <button onclick="openBeginner4()" class="level-button" id="beginButton4" disabled>Level 4</button>
-            <hr class="horizontal"/>
-            <button onclick="openBeginnerBoss()" class="level-button" id="beginBossButton" disabled>Boss Level</button>
+            <form id = "beginner-form">
+                <button onclick="openBeginner1()" class="level-button" id="beginButton1" name="beg1">Level 1</button>
+                <hr class="horizontal"/>
+                <button onclick="openBeginner2()" class="level-button" id="beginButton2"  disabled>Level 2</button>
+                <hr class="horizontal"/>
+                <button onclick="openBeginner3()" class="level-button" id="beginButton3"  disabled>Level 3</button>
+                <hr class="horizontal"/>
+                <button onclick="openBeginner4()" class="level-button" id="beginButton4"  disabled>Level 4</button>
+                <hr class="horizontal"/>
+                <button onclick="openBeginnerBoss()" class="level-button" id="beginBossButton" disabled>Boss Level</button>
+            </form>
         </div>
         </div>
 

@@ -29,6 +29,7 @@ function openBeginner1(){
         document.getElementById("beginButton2").disabled = false;
         document.getElementById("beginButton2-mobile").disabled = false;
         window.location.href="lessons/HTMLLvl1.html"
+        document.getElementById("beginner-form").action = "./php/updateLevelComplete.php"
 
 }
 function openBeginner2(){
@@ -37,6 +38,7 @@ function openBeginner2(){
         document.getElementById("beginButton3").disabled = false;
         document.getElementById("beginButton3-mobile").disabled = false;
         window.location.href = "lessons/CSSLvl1.html"
+        document.getElementById("beginner-form").action = "./php/updateLevelComplete.php"
 }
 function openBeginner3(){
         document.getElementById("beginButton2").disabled = false;
@@ -45,6 +47,7 @@ function openBeginner3(){
         document.getElementById("beginButton3-mobile").disabled = false;
         document.getElementById("beginButton4").disabled = false;
         document.getElementById("beginButton4-mobile").disabled = false;
+        document.getElementById("beginner-form").action = "./php/updateLevelComplete.php"
 }
 function openBeginner4(){
         document.getElementById("beginButton2").disabled = false;
@@ -55,6 +58,7 @@ function openBeginner4(){
         document.getElementById("beginButton4-mobile").disabled = false;
         document.getElementById("beginBossButton").disabled = false;
         document.getElementById("beginBossButton-mobile").disabled = false;
+        document.getElementById("beginner-form").action = "./php/updateLevelComplete.php"
 }
 
 function openBeginnerBoss(){
@@ -66,6 +70,7 @@ function openBeginnerBoss(){
         document.getElementById("beginButton4-mobile").disabled = false;
         document.getElementById("beginBossButton").disabled = false;
         document.getElementById("beginBossButton-mobile").disabled = false;
+        document.getElementById("beginner-form").action = "./php/updateLevelComplete.php"
 }
 function openIntermediate1(){
         document.getElementById("intButton2").disabled = false;
@@ -148,19 +153,28 @@ function openHardBoss(){
 }
 
 
-// Functions for opening forms when button is clicked in admin.html
+// Functions for opening forms when button is clicked in admin.php
 function openCreateForm() {
         document.getElementById("createPostForm").style.display = "block";
-        document.getElementById("managePostForm").style.display = "none";
+        document.getElementById("manageEditForm").style.display = "none";
+        document.getElementById("manageDeleteForm").style.display = "none";
 
 }
 
-function openManageForm() {
-        document.getElementById("managePostForm").style.display = "block";
+function openEditForm() {
+        document.getElementById("manageEditForm").style.display = "block";
+        document.getElementById("createPostForm").style.display = "none";
+        document.getElementById("manageDeleteForm").style.display = "none";
+}
+
+
+function openDeleteForm() {
+        document.getElementById("manageDeleteForm").style.display = "block";
+        document.getElementById("manageEditForm").style.display = "none";
         document.getElementById("createPostForm").style.display = "none";
 }
 
-// Functions for displaying alerts to user after clicking submit button admin.html forms
+// Functions for displaying alerts to user after clicking submit button admin.php forms
 function createPost(){
         alert("Post has been created!")
         window.location.reload();
@@ -172,15 +186,6 @@ function performAction(){
 }
 
 // Functions for displaying relevant options depending on option selected in drop down menu
-function checkAction(){
-        var value = document.getElementById("actions").value;
-        if(value == "editAction") {
-                document.getElementById("edit-attribute").hidden = false;
-        }
-        else{
-                document.getElementById("edit-attribute").hidden = true;
-        }
-}
 
 function checkValue(){
         var value = document.getElementById("table-values").value;

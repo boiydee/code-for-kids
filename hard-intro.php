@@ -9,24 +9,22 @@
     <meta name="description" content="Website for kids to learn how to develop websites">
     <meta name="keywords" content="Web Development, Code for Kids, Web Dev for Kids">
     <meta name="author" content="CS113 Group 2 - Eilidh Boyd">
+    <title>Level: Hard</title>
 
-    <!-- Title of page -->
-    <title>Level: Intermediate</title>
-
-    <!-- Links to CSS file and library to access menu icon -->
+    <!-- Link to CSS file and library to access menu icon -->
     <link href="stylesheet.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 
 <body>
-<!--Once other pages have been completed, add remaining links here in order-->
-<!-- Navigation bar-->
+    <!--Once other pages have been completed, add remaining links here in order-->
     <nav class = "navbar">
+        <!-- Icon for mobile navigation -->
         <a href="javascript:void(0);" id="mobileNavIcon">
             <i class="fa-solid fa-bars"></i>
         </a>
-        <!-- Desktop navigation -->
+        <!-- Desktop navigation bar-->
         <nav class="desktopNavigation">
             <ul class ="navItems">
                 <li><a href="index.html">Home</a></li>
@@ -34,20 +32,20 @@
                     <div class="dropDown">
                         <button class="dropdownButton">Levels</button>
                         <div class="levels-content-dropdown">
-                            <a href="beginner-intro.html">Beginner</a>
-                            <a href="intermediate-intro.html">Intermediate</a>
+                            <a href="beginner-intro.php">Beginner</a>
+                            <a href="intermediate-intro.php">Intermediate</a>
                             <a href="hard-intro.html">Hard</a>
                         </div>
                     </div>
                 </li>
                 <li><a href="progressPage.html">Progress</a></li>
-                <li><a href="admin.html">Admin</a></li>
+                <li><a href="admin.php">Admin</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
         <h1 class="main-heading">Welcome [username]</h1>
     </nav>
-    <!--Mobile navigation-->
+    <!-- Mobile navigation bar -->
     <nav id = "mobileNavigation">
         <ul class ="navItems">
             <li><a href="index.html">Home</a></li>
@@ -55,14 +53,14 @@
                 <div class="dropDown">
                     <button class="dropdownButton">Levels</button>
                     <div class="levels-content-dropdown">
-                        <a href="beginner-intro.html">Beginner</a>
-                        <a href="intermediate-intro.html">Intermediate</a>
+                        <a href="beginner-intro.php">Beginner</a>
+                        <a href="intermediate-intro.php">Intermediate</a>
                         <a href="hard-intro.html">Hard</a>
                     </div>
                 </div>
             </li>
             <li><a href="progressPage.html">Progress</a></li>
-            <li><a href="admin.html">Admin</a></li>
+            <li><a href="admin.php">Admin</a></li>
             <li><a href="login.html">Login</a></li>
         </ul>
     </nav>
@@ -70,30 +68,31 @@
     <main>
 
         <!-- Displays buttons that will take user to respective level page on desktop layout-->
-        <h1 class="level-header">Level: Intermediate</h1>
-        <p class ="pick-level-desc">Ready for a challenge? Complete the levels below: </p>
+        <h1 class="level-header">Level: Hard</h1>
+        <p class ="pick-level-desc">Feeling really brave? Work through the levels below! </p>
+
         <div class="desktop-level-selectors">
             <div class="level-selectors">
-                <button onclick="openIntermediate1()" class="level-button" id="intButton1">Level 1</button>
+                <button onclick="openHard1()" class="level-button" id="hardButton1">Level 1</button>
                 <hr class="horizontal"/>
-                <button onclick="openIntermediate2()" class="level-button" id="intButton2" disabled>Level 2</button>
+                <button onclick="openHard2()" class="level-button" id="hardButton2" disabled>Level 2</button>
                 <hr class="horizontal"/>
-                <button onclick="openIntermediate3()" class="level-button" id="intButton3" disabled>Level 3</button>
+                <button onclick="openHard3()" class="level-button" id="hardButton3" disabled>Level 3</button>
                 <hr class="horizontal"/>
-                <button onclick="openIntermediate4()" class="level-button" id="intButton4" disabled>Level 4</button>
+                <button onclick="openHard4()" class="level-button" id="hardButton4" disabled>Level 4</button>
                 <hr class="horizontal"/>
-                <button onclick="openIntermediateBoss()" class="level-button" id="intBossButton" disabled>Boss Level</button>
+                <button onclick="openHardBoss()" class="level-button" id="hardBossButton" disabled>Boss Level</button>
             </div>
         </div>
 
         <!-- Displays buttons that will take user to respective level page on desktop layout-->
         <div class="mobile-level-selectors">
             <div class="level-selectors">
-                <button onclick="openIntermediate1()" class="level-button" id="intButton1-mobile">Level 1</button>
-                <button onclick="openIntermediate2()" class="level-button" id="intButton2-mobile" disabled>Level 2</button>
-                <button onclick="openIntermediate3()" class="level-button" id="intButton3-mobile" disabled>Level 3</button>
-                <button onclick="openIntermediate4()" class="level-button" id="intButton4-mobile" disabled>Level 4</button>
-                <button onclick="openIntermediateBoss()" class="level-button" id="intBossButton-mobile" disabled>Boss Level</button>
+                <button onclick="openHard1()" class="level-button" id="hardButton1-mobile">Level 1</button>
+                <button onclick="openHard2()" class="level-button" id="hardButton2-mobile" disabled>Level 2</button>
+                <button onclick="openHard3()" class="level-button" id="hardButton3-mobile" disabled>Level 3</button>
+                <button onclick="openHard4()" class="level-button" id="hardButton4-mobile" disabled>Level 4</button>
+                <button onclick="openHardBoss()" class="level-button" id="hardBossButton-mobile" disabled>Boss Level</button>
             </div>
         </div>
     </main>
@@ -107,6 +106,7 @@
         <p id="feedback-link">Give us <a href="feedback.html">feedback here!</a></p>
     </footer>
 
+    <!--Link to Javascript file-->
     <script src="script.js"></script>
 </body>
 </html>
