@@ -73,15 +73,17 @@
 
         <div class="desktop-level-selectors">
             <div class="level-selectors">
-                <button onclick="openHard1()" class="level-button" id="hardButton1">Level 1</button>
-                <hr class="horizontal"/>
-                <button onclick="openHard2()" class="level-button" id="hardButton2" disabled>Level 2</button>
-                <hr class="horizontal"/>
-                <button onclick="openHard3()" class="level-button" id="hardButton3" disabled>Level 3</button>
-                <hr class="horizontal"/>
-                <button onclick="openHard4()" class="level-button" id="hardButton4" disabled>Level 4</button>
-                <hr class="horizontal"/>
-                <button onclick="openHardBoss()" class="level-button" id="hardBossButton" disabled>Boss Level</button>
+                <form id = "beginner-form">
+                    <button onclick="openHard1()" class="level-button" id="hardButton1">Level 1</button>
+                    <hr class="horizontal"/>
+                    <button onclick="openHard2()" class="level-button" id="hardButton2" disabled>Level 2</button>
+                    <hr class="horizontal"/>
+                    <button onclick="openHard3()" class="level-button" id="hardButton3" disabled>Level 3</button>
+                    <hr class="horizontal"/>
+                    <button onclick="openHard4()" class="level-button" id="hardButton4" disabled>Level 4</button>
+                    <hr class="horizontal"/>
+                    <button onclick="openHardBoss()" class="level-button" id="hardBossButton" disabled>Boss Level</button>
+                </form>
             </div>
         </div>
 

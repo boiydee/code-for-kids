@@ -74,15 +74,17 @@
         <p class ="pick-level-desc">Ready for a challenge? Complete the levels below: </p>
         <div class="desktop-level-selectors">
             <div class="level-selectors">
-                <button onclick="openIntermediate1()" class="level-button" id="intButton1">Level 1</button>
-                <hr class="horizontal"/>
-                <button onclick="openIntermediate2()" class="level-button" id="intButton2" disabled>Level 2</button>
-                <hr class="horizontal"/>
-                <button onclick="openIntermediate3()" class="level-button" id="intButton3" disabled>Level 3</button>
-                <hr class="horizontal"/>
-                <button onclick="openIntermediate4()" class="level-button" id="intButton4" disabled>Level 4</button>
-                <hr class="horizontal"/>
-                <button onclick="openIntermediateBoss()" class="level-button" id="intBossButton" disabled>Boss Level</button>
+                <form id = "beginner-form">
+                    <button onclick="openIntermediate1()" class="level-button" id="intButton1">Level 1</button>
+                    <hr class="horizontal"/>
+                    <button onclick="openIntermediate2()" class="level-button" id="intButton2" disabled>Level 2</button>
+                    <hr class="horizontal"/>
+                    <button onclick="openIntermediate3()" class="level-button" id="intButton3" disabled>Level 3</button>
+                    <hr class="horizontal"/>
+                    <button onclick="openIntermediate4()" class="level-button" id="intButton4" disabled>Level 4</button>
+                    <hr class="horizontal"/>
+                    <button onclick="openIntermediateBoss()" class="level-button" id="intBossButton" disabled>Boss Level</button>
+                </form>
             </div>
         </div>
 
