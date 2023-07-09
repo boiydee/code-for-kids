@@ -122,7 +122,7 @@
                 $beginner = array("No", "No", "No", "No", "No");
                 $intermediate = array("No", "No", "No", "No", "No");
 
-                echo $_POST['stage'];
+                echo "<p style='color: #f0f0f0'> {$_POST['stage']}</p>";
                 if ($_POST['stage'] == 'Beginner') {
                     $stage = "Beginner";
                 } else if ($_POST['stage'] == 'Intermediate') {
