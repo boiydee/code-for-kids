@@ -3,7 +3,7 @@
 include "connect.php";
 $update = "yes";
 
-$updateBeg1 = $connection->prepare("UPDATE `usercompletiontable` SET `LEVEL_1_COMPLETE` = ? WHERE `EMAIL` = ? ");
+$updateBeg1 = $connection->prepare("UPDATE `usercompletiontable` SET `BEGINNER_LEVEL_1_COMPLETE` = ? WHERE `EMAIL` = ? ");
 $updateBeg1->bind_param("ss", $update, $_POST['email']);
 
 if($updateBeg1->execute()){
