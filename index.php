@@ -163,7 +163,7 @@ if (isset($_SESSION["user"])) {
 <!-- Mobile navigation bar -->
 <nav id = "mobileNavigation">
   <ul class ="navItems">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="index.php">Home</a></li>
     <li>
       <div class="dropDown">
         <button class="dropdownButton">Levels</button>
