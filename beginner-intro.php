@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (isset($_SESSION["user"])) {
+    $user = $_SESSION["user"];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +35,7 @@
         <!-- Desktop navigation bar-->
         <nav class="desktopNavigation">
             <ul class ="navItems">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li>
                     <div class="dropDown">
                         <button class="dropdownButton">Levels</button>
@@ -39,15 +48,18 @@
                 </li>
                 <li><a href="progressPage.php">Progress</a></li>
                 <li><a href="admin.php">Admin</a></li>
-                <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
-        <h1 class="main-heading">Welcome [username]</h1>
+        <?php if (isset($user)): ?>
+            <li class="right">Welcome, <?php echo $user; ?></li>
+        <?php else: ?>
+            <li class="right"><a href="login.html">LogIn</a></li>
+        <?php endif; ?>
     </nav>
     <!-- Mobile navigation bar -->
     <nav id = "mobileNavigation">
         <ul class ="navItems">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li>
                 <div class="dropDown">
                     <button class="dropdownButton">Levels</button>
