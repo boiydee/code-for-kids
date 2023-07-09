@@ -73,11 +73,12 @@
     $email = "";
     $levels = array("No", "No", "No", "No", "No", "No", "No", "No", "No", "No");
 
-    if (isset($_POST['user'])) {
-        $user = $_POST['stage'];
+    if (isset($_SESSION["user"])) {
+        $user = $_SESSION["user"];
     } else {
         $user = "eilidoyd@gmail.com";
     }
+
     $sql = $connection->prepare("SELECT * FROM `usercompletiontable` WHERE UPPER(`usercompletiontable` . `EMAIL`)=?");
     $sql->bind_param('s', $user);
     $sql->execute();
@@ -102,66 +103,67 @@
     </section>
 
     <div class="levelOverview">
-        <form method="post">
-            <select id="stage">
+        <form action="" method="post">
+            <select id="stage" name="stage">
                 <option value="Beginner"> Beginner</option>
                 <option value="Intermediate">Intermediate</option>
             </select>
-            <input type="submit" name="submit" value="Check Progress"/>
+            <input type="submit" name="submit" value="Check Progress" formaction=""/>
         </form>
         <?php
 
-        include "php/connect.php";
+        if (isset($_POST['submit'])) {
+            if (!empty($_POST['stage'])) {
+                include "php/connect.php";
+                echo '<br>';
+                $firstName = "";
+                $lastName = "";
+                $email = "";
+                $beginner = array("No", "No", "No", "No", "No");
+                $intermediate = array("No", "No", "No", "No", "No");
 
-        $firstName = "";
-        $lastName = "";
-        $email = "";
-        $beginner = array("No", "No", "No", "No", "No");
-        $intermediate = array("No", "No", "No", "No", "No");
-
-
-        if (isset($_POST['stage'])) {
-            $stage = $_POST['stage'];
-            echo $stage;
-            echo "W";
-        } else {
-            $stage = "Intermediate";
-            echo "L";
-        }
-
-        if (isset($_POST['user'])) {
-            $user = $_POST['stage'];
-        } else {
-            $user = "eilidoyd@gmail.com";
-        }
-
-        $sql = $connection->prepare("SELECT * FROM `usercompletiontable` WHERE UPPER(`usercompletiontable` . `EMAIL`)=?");
-        $sql->bind_param('s', $user);
-        $sql->execute();
-        $sql->bind_result($firstName, $lastName, $email, $beginner[0], $beginner[1], $beginner[2], $beginner[3], $beginner[4], $intermediate[0], $intermediate[1], $intermediate[2], $intermediate[3], $intermediate[4]);
-        $sql->fetch();
-
-        if ($firstName = "") {
-            $completionPercent = 0;
-        } else {
-//     20% per level completed
-            $i = 0;
-            if ($stage == "Beginner") {
-                $stagesComplete = $beginner;
-            } elseif ($stage == "Intermediate") {
-                $stagesComplete = $intermediate;
-            }
-            foreach ($stagesComplete as $value) {
-                if ($value == "Yes") {
-                    $i = $i + 1;
+                echo $_POST['stage'];
+                if ($_POST['stage'] == 'Beginner') {
+                    $stage = "Beginner";
+                } else if ($_POST['stage'] == 'Intermediate') {
+                    $stage = "Intermediate";
+                } else {
+                    $stage = "Beginner";
                 }
-            }
-            $completionPercent = $i * 20;
-            echo "<progress id='levelBar' max='100' value={$completionPercent}> </progress>";
-        }
-        $connection->close();
 
-        echo "<table style='color: #f0f0f0'>
+                if (isset($_SESSION["user"])) {
+                    $user = $_SESSION["user"];
+                } else {
+                    $user = "eilidoyd@gmail.com";
+                }
+
+                $sql = $connection->prepare("SELECT * FROM `usercompletiontable` WHERE UPPER(`usercompletiontable` . `EMAIL`)=?");
+                $sql->bind_param('s', $user);
+                $sql->execute();
+                $sql->bind_result($firstName, $lastName, $email, $beginner[0], $beginner[1], $beginner[2], $beginner[3], $beginner[4], $intermediate[0], $intermediate[1], $intermediate[2], $intermediate[3], $intermediate[4]);
+                $sql->fetch();
+
+                if ($firstName = "") {
+                    $completionPercent = 0;
+                } else {
+//     20% per level completed
+                    $i = 0;
+                    if ($stage == "Beginner") {
+                        $stagesComplete = $beginner;
+                    } elseif ($stage == "Intermediate") {
+                        $stagesComplete = $intermediate;
+                    }
+                    foreach ($stagesComplete as $value) {
+                        if ($value == "Yes") {
+                            $i = $i + 1;
+                        }
+                    }
+                    $completionPercent = $i * 20;
+                    echo "<progress id='levelBar' max='100' value={$completionPercent}> </progress>";
+                }
+                $connection->close();
+
+                echo "<table style='color: #f0f0f0'>
         <tr>
             <th> Stage 1</th>
             <th> Stage 2</th>
@@ -177,6 +179,8 @@
             <td> {$stagesComplete[4]}</td>
         </tr>
     </table>";
+            }
+        }
         ?>
     </div>
 
