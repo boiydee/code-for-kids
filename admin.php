@@ -214,11 +214,11 @@ if (isset($_SESSION["user"])) {
                             $sql = "SELECT * FROM `usercompletiontable`";
                             $result = $connection->query($sql);
 
-                            echo "<table class='admin-tables'><tr class='table-header'><th>FIRST NAME</th><th>LAST NAME</th><th>EMAIL ADDRESS</th><th>LEVEL 1 COMPLETE?</th><th>LEVEL 2 COMPLETE?</th><th>LEVEL 3 COMPLETE?</th><th>LEVEL 4 COMPLETE?</th><th>LEVEL 5 COMPLETE?</th></tr>";
+                            echo "<table class='admin-tables'><tr class='table-header'><th>FIRST NAME</th><th>LAST NAME</th><th>EMAIL ADDRESS</th><th>BEGINNER LEVEL 1 COMPLETE?</th><th>BEGINNER LEVEL 2 COMPLETE?</th><th>BEGINNER LEVEL 3 COMPLETE?</th><th>BEGINNER LEVEL 4 COMPLETE?</th><th>BEGINNER LEVEL 5 COMPLETE?</th><th>INTERMEDIATE LEVEL 1 COMPLETE?</th><th>INTERMEDIATE LEVEL 2 COMPLETE?</th><th>INTERMEDIATE LEVEL 3 COMPLETE?</th><th>INTERMEDIATE LEVEL 4 COMPLETE?</th><th>INTERMEDIATE LEVEL 5 COMPLETE?</th></tr>";
 
                             if($result->num_rows > 0){
                                 while ($row = $result->fetch_assoc()) {
-                                    echo "<tr><td>" . $row["FIRST_NAME"] . "</td>" . "<td>" . $row["LAST_NAME"] . "<td>" . $row["EMAIL"] ."</td>" . "<td>" . $row["LEVEL_1_COMPLETE"] . "</td>" . "<td>" . $row["LEVEL_2_COMPLETE"] . "</td>" . "<td>" . $row["LEVEL_3_COMPLETE"] . "</td>" . "</td>" . "<td>" . $row["LEVEL_4_COMPLETE"] . "</td>" . "<td>" . $row["LEVEL_5_COMPLETE"] . "</td>"."</tr></td>";
+                                    echo "<tr><td>" . $row["FIRST_NAME"] . "</td>" . "<td>" . $row["LAST_NAME"] . "<td>" . $row["EMAIL"] ."</td>" . "<td>" . $row["BEGINNER_LEVEL_1_COMPLETE"] . "</td>" . "<td>" . $row["BEGINNER_LEVEL_2_COMPLETE"] . "</td>" . "<td>" . $row["BEGINNER_LEVEL_3_COMPLETE"] . "</td>" . "</td>" . "<td>" . $row["BEGINNER_LEVEL_4_COMPLETE"] . "</td>" . "<td>" . $row["BEGINNER_LEVEL_5_COMPLETE"] . "</td>". "<td>" . $row["INTERMEDIATE_LEVEL_1_COMPLETE"] . "</td>". "<td>" . $row["INTERMEDIATE_LEVEL_2_COMPLETE"] . "</td>". "<td>" . $row["INTERMEDIATE_LEVEL_3_COMPLETE"] . "</td>". "<td>" . $row["INTERMEDIATE_LEVEL_4_COMPLETE"] . "</td>". "<td>" . $row["INTERMEDIATE_LEVEL_5_COMPLETE"] . "</td>". "</tr></td>";
                                 }
                             }
 
