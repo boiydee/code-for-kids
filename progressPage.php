@@ -134,19 +134,23 @@
                 if (isset($_SESSION["user"])) {
                     $user = $_SESSION["user"];
                 } else {
-                    $user = "eilidoyd@gmail.com";
+                    echo "<p style='color: #f0f0f0;'>User not logged in showing template view</p>";
+                    echo '<br>';
+                    $user = "daniel.robertson@strath";
                 }
 
-                $sql = $connection->prepare("SELECT * FROM `usercompletiontable` WHERE UPPER(`usercompletiontable` . `EMAIL`)=?");
+                $sql = $connection->prepare("SELECT * FROM `usercompletiontable` WHERE UPPER(`usercompletiontable` .
+        `EMAIL`)=?");
                 $sql->bind_param('s', $user);
                 $sql->execute();
-                $sql->bind_result($firstName, $lastName, $email, $beginner[0], $beginner[1], $beginner[2], $beginner[3], $beginner[4], $intermediate[0], $intermediate[1], $intermediate[2], $intermediate[3], $intermediate[4]);
+                $sql->bind_result($firstName, $lastName, $email, $beginner[0], $beginner[1], $beginner[2], $beginner[3],
+                    $beginner[4], $intermediate[0], $intermediate[1], $intermediate[2], $intermediate[3], $intermediate[4]);
                 $sql->fetch();
 
                 if ($firstName = "") {
                     $completionPercent = 0;
                 } else {
-//     20% per level completed
+                    // 20% per level completed
                     $i = 0;
                     if ($stage == "Beginner") {
                         $stagesComplete = $beginner;
@@ -159,26 +163,30 @@
                         }
                     }
                     $completionPercent = $i * 20;
-                    echo "<progress id='levelBar' max='100' value={$completionPercent}> </progress>";
+                    echo "
+        <progress id='levelBar' max='100' value={$completionPercent}></progress>
+        ";
                 }
                 $connection->close();
 
-                echo "<table style='color: #f0f0f0'>
-        <tr>
-            <th> Stage 1</th>
-            <th> Stage 2</th>
-            <th> Stage 3</th>
-            <th> Stage 4</th>
-            <th> Stage 5</th>
-        </tr>
-        <tr>
-            <td> {$stagesComplete[0]}</td>
-            <td> {$stagesComplete[1]}</td>
-            <td> {$stagesComplete[2]}</td>
-            <td> {$stagesComplete[3]}</td>
-            <td> {$stagesComplete[4]}</td>
-        </tr>
-    </table>";
+                echo "
+        <table style='color: #f0f0f0'>
+            <tr>
+                <th> Stage 1</th>
+                <th> Stage 2</th>
+                <th> Stage 3</th>
+                <th> Stage 4</th>
+                <th> Stage 5</th>
+            </tr>
+            <tr>
+                <td> {$stagesComplete[0]}</td>
+                <td> {$stagesComplete[1]}</td>
+                <td> {$stagesComplete[2]}</td>
+                <td> {$stagesComplete[3]}</td>
+                <td> {$stagesComplete[4]}</td>
+            </tr>
+        </table>
+        ";
             }
         }
         ?>
