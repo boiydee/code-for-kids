@@ -38,7 +38,7 @@
                         </div>
                     </div>
                 </li>
-                <li><a href="progressPage.html">Progress</a></li>
+                <li><a href="progressPage.php">Progress</a></li>
                 <li><a href="admin.php">Admin</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
@@ -59,7 +59,7 @@
                     </div>
                 </div>
             </li>
-            <li><a href="progressPage.html">Progress</a></li>
+            <li><a href="progressPage.php">Progress</a></li>
             <li><a href="admin.php">Admin</a></li>
             <li><a href="login.html">Login</a></li>
         </ul>

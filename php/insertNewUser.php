@@ -3,7 +3,7 @@
 
 include "connect.php";
 
-$sql = $connection->prepare("INSERT INTO `usercompletiontable` (`FIRST_NAME`, `LAST_NAME`, `EMAIL`, `LEVEL_1_COMPLETE`, `LEVEL_2_COMPLETE`, `LEVEL_3_COMPLETE`, `LEVEL_4_COMPLETE`, `LEVEL_5_COMPLETE`) VALUES (?, ?, ?, 'No', 'No', 'No', 'No', 'No') ");
+$sql = $connection->prepare("INSERT INTO `usercompletiontable` (`FIRST_NAME`, `LAST_NAME`, `EMAIL`, `BEGINNER_LEVEL_1_COMPLETE`, `BEGINNER_LEVEL_2_COMPLETE`, `BEGINNER_LEVEL_3_COMPLETE`, `BEGINNER_LEVEL_4_COMPLETE`, `BEGINNER_LEVEL_5_COMPLETE`,`BEGINNER_LEVEL_1_COMPLETE`, `Intermediate_LEVEL_2_COMPLETE`, `Intermediate_LEVEL_3_COMPLETE`, `Intermediate_LEVEL_4_COMPLETE`, `Intermediate_LEVEL_5_COMPLETE`) VALUES (?, ?, ?, 'No', 'No', 'No', 'No', 'No', 'No', 'No', 'No', 'No', 'No') ");
 $sql->bind_param("sss", $_POST['forename'], $_POST['surname'], $_POST['email']);
 
 if ($sql->execute()) {
